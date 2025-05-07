@@ -127,19 +127,19 @@ function startMainLoop(url) {
           }
 
           const now = new Date().toLocaleString("vi-VN", { timeZone: "Asia/Ho_Chi_Minh" }).replace(",", "");
-          //console.log(`Đang gửi thông tin lên server: ${url}, ${now}, ${result}`);
+          console.log(`Đang gửi thông tin lên server: ${url}, ${now}, ${result}`);
 
-          // try {
-          //     const response = await axios.get("https://up.labycoffee.com/upgmail-update.php", {
-          //         params: {
-          //             uid: url,
-          //             full_info: `${url}%${now}%${result}%${timess}`,
-          //             type: 44
-          //         }
-          //     });
-          //     const upclone_web = response.data.upclone_web;
-          //     //console.log(upclone_web);
-          // } catch (e) {
+          try {
+              const response = await axios.get("", {
+                  params: {
+                      uid: url,
+                      full_info: `${url}%${now}%${result}%${timess}`,
+                      type: 44
+                  }
+              });
+              const upclone_web = response.data.upclone_web;
+              //console.log(upclone_web);
+          } catch (e) {
               //console.error("Lỗi khi gửi dữ liệu lên server:", e.message);
           }
 
